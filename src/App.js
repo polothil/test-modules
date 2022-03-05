@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Dropdown2 from './components/Dropdown2/Dropdown2';
+// import Dropdown from './components/Dropdown/Dropdown';
+// import { countries } from './data/countries';
+// import { animals as data } from './data/animals';
+
+import './App.scss';
+import SearchBar from './components/SearchBar/SearchBar';
+import BookData from './data/Data.json';
+
+// const items = [
+//   { id: 1, value: 'Pulp Fiction' },
+//   { id: 2, value: 'The Prestige' },
+//   { id: 3, value: 'Blade Runner 2049' },
+// ];
 
 function App() {
+  // const [value, setValue] = useState(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <SearchBar placeholder='Enter a book name..' data={BookData} />
     </div>
+    // <div className='container'>
+    //   <Dropdown2 title='Select Movie' items={items} />
+    // </div>
+
+    // <div style={{ width: 200 }}>
+    //   <Dropdown
+    //     options={data}
+    //     prompt={'Select animal...'}
+    //     id='id'
+    //     label='name'
+    //     value={value}
+    //     onChange={(val) => setValue(val)}
+    //   />
+    // </div>
   );
 }
 
